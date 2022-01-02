@@ -1,7 +1,7 @@
 import React from "react";
 import Login from "./Login";
 import useLocalStorage from "../hooks/useLocalStorage";
-import Dashboard from "./Dashboard";
+import Home from "./Home";
 import { ContactsProvider } from "../Contexts/ContactsProvider";
 import { ConversationsProvider } from "../Contexts/ConversationsProvider";
 import { SocketProvider } from "../Contexts/SocketProvider";
@@ -9,11 +9,11 @@ import { SocketProvider } from "../Contexts/SocketProvider";
 function App() {
   const [id, setId] = useLocalStorage('id');
 
-  const dashboard = (
+  const home = (
     <SocketProvider id={id}>
       <ContactsProvider>
         <ConversationsProvider id={id}>
-          <Dashboard id={id} />
+          <Home id={id} />
         </ConversationsProvider>
       </ContactsProvider>
     </SocketProvider>
@@ -21,7 +21,7 @@ function App() {
   )
 
   return (
-    id ? dashboard : <Login onIdSubmit={setId} />
+    id ? home : <Login onIdSubmit={setId} />
   )
 
 }
