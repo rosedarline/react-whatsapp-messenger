@@ -41,7 +41,7 @@ export function ConversationsProvider({ children, id }) {
             } else {
                 return [
                     ...prevConversations,
-                    { recipients, message: [newMessage] }
+                    { recipients, messages: [newMessage] }
                 ]
             }
         })
@@ -68,7 +68,7 @@ export function ConversationsProvider({ children, id }) {
             const name = (contact && contact.name) || recipient;
             return { id: recipient, name };
         })
-
+        console.log('formattedConversations', conversation);
         const messages = conversation.messages.map(message => {
             const contact = contacts.find(contact => {
                 return contact.id === message.sender;
