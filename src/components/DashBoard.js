@@ -3,7 +3,7 @@ import { useConversations } from '../Contexts/ConversationsProvider';
 import OpenConversation from './OpenConversation';
 import Sidebar from './Sidebar';
 
-export default function Dashboard({ id }) {
+export default function ({ id }) {
     const { selectedConversation } = useConversations();
     return (
         <div className='d-flex' style={{ height: "100vh" }}>

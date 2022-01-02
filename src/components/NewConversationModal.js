@@ -4,7 +4,7 @@ import { useContacts } from '../Contexts/ContactsProvider';
 import { useConversations } from '../Contexts/ConversationsProvider';
 
 
-export default function NewConversationModal({ closeModal }) {
+export default function ({ closeModal }) {
     const [selectedContactIds, setSelectedContactIds] = useState([]);
     const { contacts } = useContacts();
     const { createConversation } = useConversations();

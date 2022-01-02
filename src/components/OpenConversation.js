@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { Form, InputGroup, Button } from 'react-bootstrap';
 import { useConversations } from '../Contexts/ConversationsProvider';
 
-export default function OpenConversation() {
+export default function () {
     const [text, setText] = useState("");
     const setRef = useCallback(node => {
         if (node) {
